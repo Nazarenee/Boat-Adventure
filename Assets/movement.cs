@@ -15,7 +15,7 @@ public class movement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        targetSpeed = speed; // Set target speed to the initial speed
+        targetSpeed = speed; 
     }
 
     // Update is called once per frame
