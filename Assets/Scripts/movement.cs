@@ -60,6 +60,4 @@ public class movement : MonoBehaviour
         // Move forward with adjusted speed
         transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
     }
-    }
-    
-    
+}
