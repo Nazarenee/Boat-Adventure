@@ -1,9 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-
     public float speed = 1f;
     public float sideSpeed = 6f;
     public float maxSpeed = 10f;
@@ -11,20 +9,37 @@ public class movement : MonoBehaviour
     public float slowDownFactor = 0.3f;
     public float minSpeed = 2f;
     private float targetSpeed;
+    private bool isColliding = false;
+
+    private Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        targetSpeed = speed; 
+        targetSpeed = speed;
+        rb = GetComponent<Rigidbody>(); // Get the Rigidbody component attached to the boat
+
+        if (rb == null) 
+        {
+            rb = gameObject.AddComponent<Rigidbody>(); // Add Rigidbody if it's missing
+            rb.useGravity = false; // Disable gravity
+            rb.isKinematic = true; // Make it kinematic
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!isColliding) // Only move forward when not colliding with the obstacle
+        {
+            // Move forward
+            transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
+        }
+
         // Move left when 'A' is pressed
         if (Input.GetKey(KeyCode.A)) 
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.left * sideSpeed * Time.deltaTime, Space.World);
         }
 
         // Move right when 'D' is pressed
@@ -57,7 +72,32 @@ public class movement : MonoBehaviour
             speed = minSpeed;
         }
 
-        // Move forward with adjusted speed
-        transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
+        // Optional: You can add some effects like animation or visuals to show the boat is stopped
+        if (isColliding)
+        {
+            rb.linearVelocity = Vector3.zero; // Ensure the boat is fully stopped (no movement).
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            // Stop the boat when colliding with an obstacle
+            isColliding = true;
+            speed = 0f; // Immediately stop the boat
+            rb.linearVelocity = Vector3.zero; // Ensure the boat stops moving
+            print("Boat has collided with obstacle, speed set to 0.");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            // When the boat exits the obstacle's collider, resume movement
+            isColliding = false;
+            print("Boat is no longer colliding with obstacle, speed will resume.");
+        }
     }
 }

@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="129e8b01-e2eb-4fdb-bde5-c82f6b2e9e5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Boat project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Boat project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +117,11 @@
       <workItem from="1739537336196" duration="17000" />
       <workItem from="1739537397246" duration="1000" />
       <workItem from="1739538121562" duration="2407000" />
-      <workItem from="1739540539814" duration="553000" />
+      <workItem from="1739540539814" duration="1173000" />
+      <workItem from="1739541976644" duration="489000" />
+      <workItem from="1739542517198" duration="721000" />
+      <workItem from="1739544081179" duration="762000" />
+      <workItem from="1739544974692" duration="1518000" />
     </task>
     <servers />
   </component>
