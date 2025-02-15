@@ -103,6 +103,10 @@ public class movement : MonoBehaviour
 
             // Trigger Game Over screen
             SceneManager.LoadScene(2); // Load GameOver scene (index 2)
+        } else if (other.CompareTag("FinishLine"))
+        {
+            SceneManager.LoadScene("LavaBane"); 
+
         }
     }
 
