@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // Import for scene management
 
 public class movement : MonoBehaviour
 {
@@ -72,32 +73,32 @@ public class movement : MonoBehaviour
             speed = minSpeed;
         }
 
-        // Optional: You can add some effects like animation or visuals to show the boat is stopped
+        // Ensure the boat doesn't move after collision
         if (isColliding)
         {
-            rb.linearVelocity = Vector3.zero; // Ensure the boat is fully stopped (no movement).
+            rb.linearVelocity = Vector3.zero; // Stop the boat completely
         }
     }
 
+    // This method will handle the collision with obstacles
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (other.CompareTag("Obstacle")) // Ensure the object hit has the correct tag
         {
-            // Stop the boat when colliding with an obstacle
+            // Stop movement
             isColliding = true;
-            speed = 0f; // Immediately stop the boat
-            rb.linearVelocity = Vector3.zero; // Ensure the boat stops moving
-            print("Boat has collided with obstacle, speed set to 0.");
+            speed = 0f; // Stop the boat immediately
+            rb.linearVelocity = Vector3.zero; // Stop the Rigidbody's movement
+
+            // Trigger Game Over screen
+            SceneManager.LoadScene(1); // Adjust the scene index as needed (make sure to set correct scene index in Build Settings)
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void RestartGame()
     {
-        if (other.gameObject.CompareTag("Obstacle"))
-        {
-            // When the boat exits the obstacle's collider, resume movement
-            isColliding = false;
-            print("Boat is no longer colliding with obstacle, speed will resume.");
-        }
+        SceneManager.LoadScene(0);
     }
+
+    // Removed OnTriggerExit to prevent resuming movement after collision
 }
