@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Import for scene management
+using UnityEngine.SceneManagement;
 
 public class movement : MonoBehaviour
 {
@@ -14,9 +14,20 @@ public class movement : MonoBehaviour
 
     private Rigidbody rb;
 
+    private static int currentSceneIndex = -1; // Variable to hold the current scene index
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (currentSceneIndex == -1) // Only set it once
+        {
+            // Only store the level index, not the GameOver index
+            currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            // Log for debugging purposes
+            Debug.Log("Initial scene index: " + currentSceneIndex);
+        }
+
         targetSpeed = speed;
         rb = GetComponent<Rigidbody>(); // Get the Rigidbody component attached to the boat
 
@@ -91,14 +102,22 @@ public class movement : MonoBehaviour
             rb.linearVelocity = Vector3.zero; // Stop the Rigidbody's movement
 
             // Trigger Game Over screen
-            SceneManager.LoadScene(1); // Adjust the scene index as needed (make sure to set correct scene index in Build Settings)
+            SceneManager.LoadScene(2); // Load GameOver scene (index 2)
         }
     }
 
+    // Method to restart the game
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        Debug.Log("Restarting game from scene index: " + currentSceneIndex); // Debugging to check the stored scene index
+        // Only restart the game if the scene index is valid (0 or 1)
+        if (currentSceneIndex == 0 || currentSceneIndex == 1)
+        {
+            SceneManager.LoadScene(currentSceneIndex); // Load the level scene
+        }
+        else
+        {
+            Debug.LogError("Invalid scene index for restarting game: " + currentSceneIndex);
+        }
     }
-
-    // Removed OnTriggerExit to prevent resuming movement after collision
 }
