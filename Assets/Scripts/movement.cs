@@ -14,66 +14,55 @@ public class movement : MonoBehaviour
 
     private Rigidbody rb;
 
-    private static int currentSceneIndex = -1; // Variable to hold the current scene index
+    private static int currentSceneIndex = -1; 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (currentSceneIndex == -1) // Only set it once
+        if (currentSceneIndex == -1) 
         {
-            // Only store the level index, not the GameOver index
             currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            // Log for debugging purposes
-            Debug.Log("Initial scene index: " + currentSceneIndex);
         }
 
         targetSpeed = speed;
-        rb = GetComponent<Rigidbody>(); // Get the Rigidbody component attached to the boat
+        rb = GetComponent<Rigidbody>(); 
 
         if (rb == null) 
         {
-            rb = gameObject.AddComponent<Rigidbody>(); // Add Rigidbody if it's missing
-            rb.useGravity = false; // Disable gravity
-            rb.isKinematic = true; // Make it kinematic
+            rb = gameObject.AddComponent<Rigidbody>();
+            rb.useGravity = false; 
+            rb.isKinematic = true; 
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!isColliding) // Only move forward when not colliding with the obstacle
+        if (!isColliding) 
         {
-            // Move forward
             transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
         }
 
-        // Move left when 'A' is pressed
         if (Input.GetKey(KeyCode.A)) 
         {
             transform.Translate(Vector3.left * sideSpeed * Time.deltaTime, Space.World);
         }
 
-        // Move right when 'D' is pressed
         if (Input.GetKey(KeyCode.D)) 
         {
             transform.Translate(Vector3.right * sideSpeed * Time.deltaTime, Space.World);
         }
 
-        // Slow down when 'S' is held, but don't go below minSpeed
         if (Input.GetKey(KeyCode.S)) 
         {
-            targetSpeed = speed * slowDownFactor; // Set target speed to the slowed-down value
+            targetSpeed = speed * slowDownFactor; 
         }
         else
         {
-            targetSpeed = maxSpeed; // Revert to max speed when S is released
+            targetSpeed = maxSpeed; 
         }
 
-        // Smoothly transition to target speed
         speed = Mathf.Lerp(speed, targetSpeed, Time.deltaTime * 5f);
 
-        // Make sure speed doesn't exceed maxSpeed or go below minSpeed
         if (speed > maxSpeed) 
         {
             speed = maxSpeed;
@@ -84,40 +73,38 @@ public class movement : MonoBehaviour
             speed = minSpeed;
         }
 
-        // Ensure the boat doesn't move after collision
         if (isColliding)
         {
-            rb.linearVelocity = Vector3.zero; // Stop the boat completely
+            rb.linearVelocity = Vector3.zero; 
         }
     }
 
-    // This method will handle the collision with obstacles
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Obstacle")) // Ensure the object hit has the correct tag
+        if (other.CompareTag("Obstacle")) 
         {
             // Stop movement
             isColliding = true;
-            speed = 0f; // Stop the boat immediately
-            rb.linearVelocity = Vector3.zero; // Stop the Rigidbody's movement
+            speed = 0f; 
+            rb.linearVelocity = Vector3.zero; 
 
-            // Trigger Game Over screen
-            SceneManager.LoadScene(2); // Load GameOver scene (index 2)
+           
+            SceneManager.LoadScene(2); 
         } else if (other.CompareTag("FinishLine"))
         {
             SceneManager.LoadScene("LavaBane"); 
-
+        } else if (other.CompareTag("Victory"))
+        {
+            SceneManager.LoadScene("Victory");
         }
     }
 
-    // Method to restart the game
     public void RestartGame()
     {
-        Debug.Log("Restarting game from scene index: " + currentSceneIndex); // Debugging to check the stored scene index
-        // Only restart the game if the scene index is valid (0 or 1)
+        Debug.Log("Restarting game from scene index: " + currentSceneIndex); 
         if (currentSceneIndex == 0 || currentSceneIndex == 1)
         {
-            SceneManager.LoadScene(currentSceneIndex); // Load the level scene
+            SceneManager.LoadScene(currentSceneIndex); 
         }
         else
         {

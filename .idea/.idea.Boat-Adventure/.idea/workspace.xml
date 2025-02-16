@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4d31cc07-9aed-4bf7-ae93-9b7461e0b531" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Gameover.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Gameover.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Boat-Adventure/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Boat-Adventure/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bane .prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bane .prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameMenu.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameMenu.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Gameover.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Gameover.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LavaBane.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LavaBane.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/w.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/w.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/f.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-6000.dwlt" afterDir="false" />
     </list>
@@ -28,6 +47,9 @@
     &quot;accountId&quot;: &quot;19d55565-2264-4c44-9c52-7c3730fd1b7c&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/movement.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -41,6 +63,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -99,6 +125,17 @@
       <updated>1739630448413</updated>
       <workItem from="1739630450952" duration="50000" />
       <workItem from="1739630511278" duration="76000" />
+      <workItem from="1739721984401" duration="527000" />
+      <workItem from="1739722573014" duration="9000" />
+      <workItem from="1739722652987" duration="2000" />
+      <workItem from="1739722665112" duration="2000" />
+      <workItem from="1739722910267" duration="11000" />
+      <workItem from="1739722965472" duration="82000" />
+      <workItem from="1739723083025" duration="19000" />
+      <workItem from="1739723226241" duration="51000" />
+      <workItem from="1739723498951" duration="31000" />
+      <workItem from="1739723538769" duration="697000" />
+      <workItem from="1739724294916" duration="75000" />
     </task>
     <servers />
   </component>

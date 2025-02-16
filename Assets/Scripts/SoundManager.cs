@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public AudioSource audioSource;
     public Button soundToggleButton;
-    public TMP_Text buttonText; // Use TMP_Text instead of Text
+    public TMP_Text buttonText; 
     private bool isSoundOn = true;
 
     void Start()
