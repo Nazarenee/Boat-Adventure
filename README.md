@@ -6,8 +6,8 @@ Test your sailing skills in our fun and challenging boat game! Your mission is t
 
 
 How to Run the Game
-Clone the project.
-Open the project in Unity Hub.
+* Clone the project.
+* Open the project in Unity Hub.
 Select the scene "MainMenu".
 Click Play to start.
 
